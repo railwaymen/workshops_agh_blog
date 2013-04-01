@@ -1,4 +1,6 @@
 WorkshopsAghBlog::Application.routes.draw do
+  namespace(:admin){ resources :posts }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
