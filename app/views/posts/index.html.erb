@@ -3,5 +3,6 @@
     <h3><%= link_to post.title, post %></h3>
     <p>on <%= post.created_at.to_date.to_s(:long) %></p>
     <p><%= post.content %></p>
+    <p><%= image_tag post.image.url(:medium) if post.image.exists? %></p>
   </div>
 <% end %>

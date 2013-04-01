@@ -8,6 +8,7 @@
   <strong>Content:</strong>
   <%= @post.content %>
 </p>
+<p><%= image_tag @post.image.url(:medium) if @post.image.exists? %></p>
 
 <p>
   <strong>Comments:</strong>
