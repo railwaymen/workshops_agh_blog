@@ -10,5 +10,19 @@
 </p>
 
 <p>
+  <strong>Comments:</strong>
+</p>
+<div id="comments">
+  <%= render @comments %>
+</div>
+
+<%= form_for [@post, @comment], remote: true do |f| %>
+  <%= f.text_area :content, cols: 30, rows: 5 %>
+  <div>
+    <%= f.submit 'Comment' %>
+  </div>
+<% end %>
+
+<p>
   <%= link_to "View All", posts_path %>
 </p>

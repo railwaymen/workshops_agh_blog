@@ -1,7 +1,9 @@
 WorkshopsAghBlog::Application.routes.draw do
   devise_for :users
 
-  resources :posts
+  resources :posts, only: [:index, :show] do
+    resources :comments, only: [:create]
+  end
 
   namespace(:admin){ resources :posts }
 
