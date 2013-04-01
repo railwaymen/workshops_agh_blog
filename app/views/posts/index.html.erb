@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  <div>
+    <h3><%= link_to post.title, post %></h3>
+    <p>on <%= post.created_at.to_date.to_s(:long) %></p>
+    <p><%= post.content %></p>
+  </div>
+<% end %>
