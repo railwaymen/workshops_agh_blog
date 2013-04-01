@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'nifty-generators', group: :development
 gem 'devise'
+gem 'omniauth-facebook'
 
 
 # Gems used only for assets and not required
