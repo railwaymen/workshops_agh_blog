@@ -1,4 +1,6 @@
 class Admin::PostsController < ApplicationController
+  before_filter :authenticate_user!, :authorize_user!
+
   def index
     @posts = Post.all
   end
@@ -37,5 +39,11 @@ class Admin::PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to admin_posts_url, :notice => "Successfully destroyed post."
+  end
+
+  private
+
+  def authorize_user!
+    redirect_to root_path, alert: 'Access denied!' unless current_user.admin?
   end
 end
